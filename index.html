@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADVA | Expert Amazon Marketplace Management</title>
+    <meta name="description" content="End-to-end Amazon management and e-commerce growth by Marc Dapiosen.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Base Styles & Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { color: #333; line-height: 1.6; background-color: #f9fafb; }
+        h1, h2, h3, h4 { color: #111827; margin-bottom: 15px; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Buttons */
+        .btn { display: inline-block; background-color: #2563eb; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 600; transition: background 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background-color: #1d4ed8; }
+
+        /* Navbar */
+        header { background-color: #fff; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo { font-size: 24px; font-weight: 800; color: #111827; letter-spacing: 1px; }
+
+        /* Hero Section (Step 1) */
+        .hero { display: flex; align-items: center; padding: 100px 0; background-color: #fff; }
+        .hero-content { flex: 1; padding-right: 50px; }
+        .hero-content h1 { font-size: 48px; line-height: 1.2; margin-bottom: 20px; color: #111827; }
+        .hero-content p { font-size: 18px; color: #4b5563; margin-bottom: 30px; }
+        .hero-image { flex: 1; text-align: right; }
+        .hero-image img { max-width: 100%; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+
+        /* Trust Banner (Step 2) */
+        .trust-banner { background-color: #111827; padding: 40px 0; text-align: center; color: #9ca3af; }
+        .trust-banner h4 { color: #9ca3af; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-weight: 400; }
+        .logos { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; align-items: center; }
+        .logos span { font-size: 20px; font-weight: 600; color: #d1d5db; }
+
+        /* Services (Step 3) */
+        .services { padding: 100px 0; }
+        .section-title { text-align: center; font-size: 36px; margin-bottom: 60px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .service-card { background: #fff; padding: 40px 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; }
+        .service-card i { font-size: 32px; color: #2563eb; margin-bottom: 20px; }
+        .service-card h3 { font-size: 20px; margin-bottom: 15px; }
+        .service-card p { font-size: 15px; color: #4b5563; }
+
+        /* Experiences (Step 4) */
+        .experiences { padding: 100px 0; background-color: #fff; }
+        .experience-card { display: flex; align-items: center; margin-bottom: 40px; background: #f9fafb; border-radius: 10px; overflow: hidden; border: 1px solid #e5e7eb; }
+        .exp-metric { background: #2563eb; color: #fff; padding: 40px; width: 35%; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+        .exp-metric h2 { color: #fff; font-size: 32px; margin-bottom: 5px; }
+        .exp-metric p { font-size: 14px; opacity: 0.9; }
+        .exp-content { padding: 40px; width: 65%; }
+        .exp-content h3 { font-size: 22px; margin-bottom: 10px; }
+
+        /* Tools Stack (Step 5) */
+        .tools { padding: 100px 0; text-align: center; }
+        .tools-category { margin-bottom: 40px; }
+        .tools-category h3 { font-size: 18px; color: #4b5563; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .pill-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .pill { background: #e0e7ff; color: #3730a3; padding: 10px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; }
+
+        /* Contact (Step 6) */
+        .contact { padding: 100px 0; background-color: #fff; }
+        .contact-wrapper { display: flex; gap: 60px; }
+        .contact-info { flex: 1; }
+        .contact-info h2 { font-size: 40px; line-height: 1.2; margin-bottom: 20px; }
+        .contact-info p { font-size: 18px; color: #4b5563; margin-bottom: 40px; }
+        .contact-details div { display: flex; align-items: center; margin-bottom: 20px; font-size: 16px; font-weight: 600;}
+        .contact-details i { color: #2563eb; width: 30px; font-size: 20px; }
+        
+        .contact-form { flex: 1; background: #f9fafb; padding: 40px; border-radius: 10px; border: 1px solid #e5e7eb; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 15px; }
+        textarea.form-control { resize: vertical; height: 120px; }
+
+        /* Footer */
+        footer { background: #111827; color: #fff; text-align: center; padding: 30px 0; font-size: 14px; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero, .contact-wrapper, .experience-card { flex-direction: column; }
+            .hero-content { padding-right: 0; margin-bottom: 40px; text-align: center; }
+            .hero-content h1 { font-size: 36px; }
+            .exp-metric, .exp-content { width: 100%; }
+            .exp-metric { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">MADVA</div>
+            <a href="#contact" class="btn">Let's Talk</a>
+        </div>
+    </header>
+
+    <section class="hero container">
+        <div class="hero-content">
+            <h1>Expert Marketplace Management & E-Commerce Growth.</h1>
+            <p>Founded by an industry veteran, we provide end-to-end Amazon management. You get agency-level strategy with the dedicated, hands-on execution your brand deserves.</p>
+            <a href="#contact" class="btn">Let's Scale Your Sales</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marc Dapiosen - Amazon Expert">
+        </div>
+    </section>
+
+    <section class="trust-banner">
+        <div class="container">
+            <h4>Trusted by high-growth D2C brands</h4>
+            <div class="logos">
+                <span>ALVA</span>
+                <span>VITACUP</span>
+                <span>PUREBOOST</span>
+                <span>BEKA</span>
+                <span>BIRDROCK HOME</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="services container" id="services">
+        <h2 class="section-title">Comprehensive Amazon Solutions</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Full-Service Account Management</h3>
+                <p>We handle the rigorous daily operations of Seller Central, from proactive account health monitoring and compliance checks to managing A-Z claims and FBA reimbursements.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Advanced PPC Campaigns</h3>
+                <p>Maximize ad spend and lower ACoS. We build and continuously optimize full-funnel advertising strategies using Sponsored Products, Brands, and Display.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <h3>Listing Optimization & SEO</h3>
+                <p>Turn casual browsers into buyers. We conduct deep-dive listing audits, implementing aggressive keyword SEO, compelling copywriting, and A+ Content.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-box-open"></i>
+                <h3>Catalog & Inventory</h3>
+                <p>Stop losing sales to backend errors. We untangle complex catalog issues, resolve stranded inventory, and streamline inventory management so you stay in stock.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="experiences">
+        <div class="container">
+            <h2 class="section-title">Proven Agency Results</h2>
+            
+            <div class="experience-card">
+                <div class="exp-metric">
+                    <h2>5% - 7%</h2>
+                    <p>YoY Sales Growth</p>
+                </div>
+                <div class="exp-content">
+                    <h3>Full-Scale Brand Growth & PPC Optimization</h3>
+                    <p>Spearheaded end-to-end Amazon growth strategies for major consumer brands. By leveraging advanced SEO tools like Helium 10 and DataDive alongside aggressive full-funnel PPC campaigns, I consistently maximized search visibility and improved organic rankings.</p>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="exp-metric">
+                    <h2>1,000</h2>
+                    <p>Account Health Rating</p>
+                </div>
+                <div class="exp-content">
+                    <h3>Advanced Catalog & Account Health Rescue</h3>
+                    <p>Acted as the last line of defense for complex Amazon Seller Central issues. Maintained a flawless 1,000 Account Health Rating while recovering over 100 SKUs from listing suppression by resolving deep catalog errors and securing FBA reimbursements.</p>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="exp-metric">
+                    <h2>Zero</h2>
+                    <p>Costly Stockouts</p>
+                </div>
+                <div class="exp-content">
+                    <h3>Precision Inventory & Operations Management</h3>
+                    <p>Protected brand revenue by ensuring top-selling products were always active, in-stock, and ready to ship. Through rigorous daily inventory monitoring and continuous account audits, I streamlined backend operations and secured the brand's bottom line.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="tools container">
+        <h2 class="section-title">The MADVA Tech Stack</h2>
+        
+        <div class="tools-category">
+            <h3>Data & Search Optimization</h3>
+            <div class="pill-container">
+                <span class="pill">Helium 10</span>
+                <span class="pill">DataDive</span>
+                <span class="pill">Amazon Search Query Performance (SQP)</span>
+            </div>
+        </div>
+
+        <div class="tools-category">
+            <h3>Marketplace Operations & Integrations</h3>
+            <div class="pill-container">
+                <span class="pill">Amazon Seller Central</span>
+                <span class="pill">Channel Engine</span>
+                <span class="pill">Mirakl</span>
+            </div>
+        </div>
+
+        <div class="tools-category">
+            <h3>Advertising & Revenue Growth</h3>
+            <div class="pill-container">
+                <span class="pill">Amazon Ads Console</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container contact-wrapper">
+            <div class="contact-info">
+                <h2>Ready to Dominate Your Category on Amazon?</h2>
+                <p>Stop losing sales to catalog errors, poor SEO, and inefficient ad spend. Let’s streamline your operations and build a highly profitable, scalable marketplace strategy.</p>
+                
+                <div class="contact-details">
+                    <div><i class="fa-regular fa-envelope"></i> marc@madva.co</div>
+                    <div><i class="fa-solid fa-phone"></i> +63 917 318 4103</div>
+                    <div><i class="fa-solid fa-location-dot"></i> Dasmariñas, Cavite — Partnering Globally</div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Brand/Company URL</label>
+                        <input type="url" name="company_url" class="form-control" placeholder="https://" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Biggest Challenge on Amazon?</label>
+                        <select name="challenge" class="form-control">
+                            <option value="PPC/Advertising">PPC & Advertising</option>
+                            <option value="Catalog Errors">Catalog & Listing Errors</option>
+                            <option value="SEO/Ranking">SEO & Organic Ranking</option>
+                            <option value="Full Management">I need full account management</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Get Your Free Account Audit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MADVA. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
